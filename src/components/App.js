@@ -12,7 +12,7 @@ function App() {
       <Main />
       <Footer />
 
-      <PopupWithForm title="Редактировать профиль" name="edit-profile">
+      <PopupWithForm title="Редактировать профиль" name="edit">
         <label className="popup__label">
           <input type="text" name="userName" id="owner-name"
                  className="popup__input popup__input_type_name" placeholder="Имя"
@@ -27,7 +27,7 @@ function App() {
         </label>
       </PopupWithForm>
 
-      <PopupWithForm title="Новое место" name="new-place">
+      <PopupWithForm title="Новое место" name="new-card">
         <label className="popup__label">
           <input type="text" name="name" id="place-name"
                  className="popup__input popup__input_type_card-name" placeholder="Название"
