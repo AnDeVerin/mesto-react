@@ -23,6 +23,12 @@ function App() {
     setIsEditAvatarPopupOpen(true);
   }
 
+  function closeAllPopups() {
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setIsEditAvatarPopupOpen(false);
+  }
+
   return (
     <div className="page__content">
       <Header />
@@ -33,7 +39,7 @@ function App() {
       />
       <Footer />
 
-      <PopupWithForm title="Редактировать профиль" name="edit" isOpen={isEditProfilePopupOpen}>
+      <PopupWithForm title="Редактировать профиль" name="edit" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}>
         <label className="popup__label">
           <input type="text" name="userName" id="owner-name"
                  className="popup__input popup__input_type_name" placeholder="Имя"
@@ -48,7 +54,7 @@ function App() {
         </label>
       </PopupWithForm>
 
-      <PopupWithForm title="Новое место" name="new-card" isOpen={isAddPlacePopupOpen}>
+      <PopupWithForm title="Новое место" name="new-card" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}>
         <label className="popup__label">
           <input type="text" name="name" id="place-name"
                  className="popup__input popup__input_type_card-name" placeholder="Название"
@@ -65,7 +71,7 @@ function App() {
 
       <PopupWithForm title="Вы уверены?" name="remove-card" buttonText="Да" />
 
-      <PopupWithForm title="Обновить аватар" name="edit-avatar" isOpen={isEditAvatarPopupOpen}>
+      <PopupWithForm title="Обновить аватар" name="edit-avatar" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}>
         <label className="popup__label">
           <input type="url" name="avatar" id="owner-avatar"
                  className="popup__input popup__input_type_description" placeholder="Ссылка на изображение"
