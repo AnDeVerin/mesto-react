@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import './App.css';
 import PopupWithForm from './PopupWithForm';
+import ImagePopup from './ImagePopup';
+import './App.css';
 
 function App() {
   return (
@@ -53,13 +54,7 @@ function App() {
         </label>
       </PopupWithForm>
 
-      <div className="popup popup_type_image">
-        <div className="popup__content popup__content_content_image">
-          <button type="button" className="popup__close"></button>
-          <img alt="" className="popup__image" />
-          <p className="popup__caption"></p>
-        </div>
-      </div>
+      <ImagePopup />
     </div>
   );
 }
