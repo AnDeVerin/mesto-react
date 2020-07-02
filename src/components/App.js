@@ -7,10 +7,26 @@ import ImagePopup from './ImagePopup';
 import './App.css';
 
 function App() {
+  function handleEditProfileClick() {
+    document.querySelector('.popup_type_edit').classList.add('popup_is-opened');
+  }
+
+  function handleAddPlaceClick() {
+    document.querySelector('.popup_type_new-card').classList.add('popup_is-opened');
+  }
+
+  function handleEditAvatarClick() {
+    document.querySelector('.popup_type_edit-avatar').classList.add('popup_is-opened');
+  }
+
   return (
     <div className="page__content">
       <Header />
-      <Main />
+      <Main
+        onEditProfile={handleEditProfileClick}
+        onAddPlace={handleAddPlaceClick}
+        onEditAvatar={handleEditAvatarClick}
+      />
       <Footer />
 
       <PopupWithForm title="Редактировать профиль" name="edit">
