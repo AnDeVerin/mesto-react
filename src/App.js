@@ -3,101 +3,101 @@ import './App.css';
 
 function App() {
   return (
-    <div class="page__content">
-      <header class="header page__section">
-        <img src="./images/logo.svg" alt="Логотип проекта Mesto" class="logo header__logo">
+    <div className="page__content">
+      <header className="header page__section">
+        <img src="./images/logo.svg" alt="Логотип проекта Mesto" className="logo header__logo" />
       </header>
-      <main class="content">
-        <section class="profile page__section">
-          <div class="profile__image"></div>
-          <div class="profile__info">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
-            <p class="profile__description">Исследователь океана</p>
+      <main className="content">
+        <section className="profile page__section">
+          <div className="profile__image"></div>
+          <div className="profile__info">
+            <h1 className="profile__title">Жак-Ив Кусто</h1>
+            <button className="profile__edit-button" type="button"></button>
+            <p className="profile__description">Исследователь океана</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
+          <button className="profile__add-button" type="button"></button>
         </section>
-        <section class="places page__section">
-          <ul class="places__list">
+        <section className="places page__section">
+          <ul className="places__list">
           </ul>
         </section>
       </main>
-      <footer class="footer page__section">
-        <p class="footer__copyright">
+      <footer className="footer page__section">
+        <p className="footer__copyright">
           © 2020 Mesto Russia
         </p>
       </footer>
-      <div class="popup popup_type_edit">
-      <div class="popup__content">
-        <button type="button" class="popup__close"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form" name="edit-profile" novalidate>
-          <label class="popup__label">
-            <input type="text" name="userName" id="owner-name"
-                   class="popup__input popup__input_type_name" placeholder="Имя"
-                   required minlength="2" maxlength="40" pattern="[a-zA-Zа-яА-Я -]{1,}">
-            <span class="popup__error" id="owner-name-error"></span>
-          </label>
-          <label class="popup__label">
-            <input type="text" name="userDescription" id="owner-description"
-                   class="popup__input popup__input_type_description" placeholder="Занятие"
-                   required minlength="2" maxlength="200">
-            <span class="popup__error" id="owner-description-error"></span>
-          </label>
-          <button type="submit" class="button popup__button">Сохранить</button>
-        </form>
+      <div className="popup popup_type_edit">
+        <div className="popup__content">
+          <button type="button" className="popup__close"></button>
+          <h3 className="popup__title">Редактировать профиль</h3>
+          <form className="popup__form" name="edit-profile" noValidate>
+            <label className="popup__label">
+              <input type="text" name="userName" id="owner-name"
+                     className="popup__input popup__input_type_name" placeholder="Имя"
+                     required minLength="2" maxLength="40" pattern="[a-zA-Zа-яА-Я -]{1,}" />
+              <span className="popup__error" id="owner-name-error"></span>
+            </label>
+            <label className="popup__label">
+              <input type="text" name="userDescription" id="owner-description"
+                     className="popup__input popup__input_type_description" placeholder="Занятие"
+                     required minLength="2" maxLength="200" />
+              <span className="popup__error" id="owner-description-error"></span>
+            </label>
+            <button type="submit" className="button popup__button">Сохранить</button>
+          </form>
+        </div>
       </div>
-    </div>
-      <div class="popup popup_type_new-card">
-        <div class="popup__content">
-          <button type="button" class="popup__close"></button>
-          <h3 class="popup__title">Новое место</h3>
-          <form class="popup__form" name="new-place" novalidate>
-            <label class="popup__label">
+      <div className="popup popup_type_new-card">
+        <div className="popup__content">
+          <button type="button" className="popup__close"></button>
+          <h3 className="popup__title">Новое место</h3>
+          <form className="popup__form" name="new-place" noValidate>
+            <label className="popup__label">
               <input type="text" name="name" id="place-name"
-                     class="popup__input popup__input_type_card-name" placeholder="Название"
-                     required minlength="1" maxlength="30">
-              <span class="popup__error" id="place-name-error"></span>
+                     className="popup__input popup__input_type_card-name" placeholder="Название"
+                     required minLength="1" maxLength="30" />
+              <span className="popup__error" id="place-name-error"></span>
             </label>
-            <label class="popup__label">
+            <label className="popup__label">
               <input type="url" name="link" id="place-link"
-                     class="popup__input popup__input_type_url" placeholder="Ссылка на картинку"
-                     required>
-              <span class="popup__error" id="place-link-error"></span>
+                     className="popup__input popup__input_type_url" placeholder="Ссылка на картинку"
+                     required />
+              <span className="popup__error" id="place-link-error"></span>
             </label>
-            <button type="submit" class="button popup__button popup__button_disabled">Сохранить</button>
+            <button type="submit" className="button popup__button popup__button_disabled">Сохранить</button>
           </form>
         </div>
       </div>
-      <div class="popup popup_type_remove-card">
-        <div class="popup__content">
-          <button type="button" class="popup__close"></button>
-          <h3 class="popup__title">Вы уверены?</h3>
-          <form class="popup__form" name="remove-card" novalidate>
-            <button type="submit" class="button popup__button">Да</button>
+      <div className="popup popup_type_remove-card">
+        <div className="popup__content">
+          <button type="button" className="popup__close"></button>
+          <h3 className="popup__title">Вы уверены?</h3>
+          <form className="popup__form" name="remove-card" noValidate>
+            <button type="submit" className="button popup__button">Да</button>
           </form>
         </div>
       </div>
-      <div class="popup popup_type_edit-avatar">
-        <div class="popup__content">
-          <button type="button" class="popup__close"></button>
-          <h3 class="popup__title">Обновить аватар</h3>
-          <form class="popup__form" name="edit-avatar" novalidate>
-            <label class="popup__label">
+      <div className="popup popup_type_edit-avatar">
+        <div className="popup__content">
+          <button type="button" className="popup__close"></button>
+          <h3 className="popup__title">Обновить аватар</h3>
+          <form className="popup__form" name="edit-avatar" noValidate>
+            <label className="popup__label">
               <input type="url" name="avatar" id="owner-avatar"
-                     class="popup__input popup__input_type_description" placeholder="Ссылка на изображение"
-                     required>
-              <span class="popup__error" id="owner-avatar-error"></span>
+                     className="popup__input popup__input_type_description" placeholder="Ссылка на изображение"
+                     required />
+              <span className="popup__error" id="owner-avatar-error"></span>
             </label>
-            <button type="submit" class="button popup__button">Сохранить</button>
+            <button type="submit" className="button popup__button">Сохранить</button>
           </form>
         </div>
       </div>
-      <div class="popup popup_type_image">
-        <div class="popup__content popup__content_content_image">
-          <button type="button" class="popup__close"></button>
-          <img alt="" class="popup__image">
-          <p class="popup__caption"></p>
+      <div className="popup popup_type_image">
+        <div className="popup__content popup__content_content_image">
+          <button type="button" className="popup__close"></button>
+          <img alt="" className="popup__image" />
+          <p className="popup__caption"></p>
         </div>
       </div>
     </div>
