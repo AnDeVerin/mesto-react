@@ -113,4 +113,10 @@ class Api {
   }
 }
 
-export default Api;
+const api = new Api({
+  address: 'https://praktikum.tk',
+  groupId: `cohort0`,
+  token: `80a75492-21c5-4330-a02f-308029e94b63`,
+});
+
+export default api;
