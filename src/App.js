@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import logoPath from './images/logo.svg';
 
 function App() {
   return (
     <div className="page__content">
       <header className="header page__section">
-        <img src="./images/logo.svg" alt="Логотип проекта Mesto" className="logo header__logo" />
+        <img src={logoPath} alt="Логотип проекта Mesto" className="logo header__logo" />
       </header>
       <main className="content">
         <section className="profile page__section">
