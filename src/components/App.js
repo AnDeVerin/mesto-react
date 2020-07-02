@@ -7,16 +7,20 @@ import ImagePopup from './ImagePopup';
 import './App.css';
 
 function App() {
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+
   function handleEditProfileClick() {
-    document.querySelector('.popup_type_edit').classList.add('popup_is-opened');
+    setIsEditProfilePopupOpen(true);
   }
 
   function handleAddPlaceClick() {
-    document.querySelector('.popup_type_new-card').classList.add('popup_is-opened');
+    setIsAddPlacePopupOpen(true);
   }
 
   function handleEditAvatarClick() {
-    document.querySelector('.popup_type_edit-avatar').classList.add('popup_is-opened');
+    setIsEditAvatarPopupOpen(true);
   }
 
   return (
@@ -29,7 +33,7 @@ function App() {
       />
       <Footer />
 
-      <PopupWithForm title="Редактировать профиль" name="edit">
+      <PopupWithForm title="Редактировать профиль" name="edit" isOpen={isEditProfilePopupOpen}>
         <label className="popup__label">
           <input type="text" name="userName" id="owner-name"
                  className="popup__input popup__input_type_name" placeholder="Имя"
@@ -44,7 +48,7 @@ function App() {
         </label>
       </PopupWithForm>
 
-      <PopupWithForm title="Новое место" name="new-card">
+      <PopupWithForm title="Новое место" name="new-card" isOpen={isAddPlacePopupOpen}>
         <label className="popup__label">
           <input type="text" name="name" id="place-name"
                  className="popup__input popup__input_type_card-name" placeholder="Название"
@@ -61,7 +65,7 @@ function App() {
 
       <PopupWithForm title="Вы уверены?" name="remove-card" buttonText="Да" />
 
-      <PopupWithForm title="Обновить аватар" name="edit-avatar">
+      <PopupWithForm title="Обновить аватар" name="edit-avatar" isOpen={isEditAvatarPopupOpen}>
         <label className="popup__label">
           <input type="url" name="avatar" id="owner-avatar"
                  className="popup__input popup__input_type_description" placeholder="Ссылка на изображение"

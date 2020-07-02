@@ -3,11 +3,12 @@ import React from 'react';
 function PopupWithForm({
   title,
   name,
+  isOpen,
   buttonText = 'Сохранить',
   children,
 }) {
   return (
-    <div className={`popup popup_type_${name}`}>
+    <div className={`popup popup_type_${name} ${isOpen && 'popup_is-opened'}`}>
       <div className="popup__content">
         <form className="popup__form" name={name} noValidate>
           <button type="button" className="popup__close"></button>
